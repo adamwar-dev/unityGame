@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/*
+    Piotr Czuczelo
+    Main menu script.
+*/
 public class MainManu : MonoBehaviour
 {
     // Start is called before the first frame update
