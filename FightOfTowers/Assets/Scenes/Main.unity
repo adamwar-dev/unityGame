@@ -9773,7 +9773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490d9b4b85952c64cac5a1b6e249c6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 2661025016347681614, guid: 79560258b93f04698831ee7a66dcc9b0, type: 3}
+  objectToSpawn: {fileID: 4697768305690122850, guid: 84a6279229a5e4f849875a1a61de1439, type: 3}
   load: {fileID: 2041686397}
   fill: {fileID: 1721249112}
   gradient:
