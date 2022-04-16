@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 5216010546691629608}
   - component: {fileID: 1587930986603376267}
   m_Layer: 0
-  m_Name: Lvl3FriendlyUnit_A
+  m_Name: Lvl3FriendlyFighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

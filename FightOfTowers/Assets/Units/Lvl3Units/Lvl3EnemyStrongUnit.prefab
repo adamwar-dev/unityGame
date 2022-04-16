@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 1777379505809391312}
   - component: {fileID: 3510251159895276320}
   m_Layer: 0
-  m_Name: Lvl3EnemyUnit_C
+  m_Name: Lvl3EnemyStrongUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
