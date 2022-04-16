@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 6741924770703527875}
   - component: {fileID: 3342873940981482866}
   m_Layer: 0
-  m_Name: Lvl3EnemyUnit_A
+  m_Name: Lvl3EnemyFighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

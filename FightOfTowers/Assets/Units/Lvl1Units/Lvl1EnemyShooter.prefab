@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5579697541724370286}
   - component: {fileID: 3140074471488695984}
   m_Layer: 0
-  m_Name: Lvl1EnemyUnit_B
+  m_Name: Lvl1EnemyShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

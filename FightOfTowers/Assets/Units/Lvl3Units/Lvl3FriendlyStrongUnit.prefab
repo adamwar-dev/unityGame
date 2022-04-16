@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7287988079661245471}
   - component: {fileID: 4787447310039613546}
   m_Layer: 0
-  m_Name: Lvl3FriendlyUnit_C
+  m_Name: Lvl3FriendlyStrongUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
