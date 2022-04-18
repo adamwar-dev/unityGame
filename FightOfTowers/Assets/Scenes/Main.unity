@@ -1110,7 +1110,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit3
+        m_MethodName: SpawnUnit3Lv2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1243,7 +1243,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit2
+        m_MethodName: SpawnUnit2Lv2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8292,7 +8292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b403741e4808da4fb2279f58260688a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8223138949162704345, guid: 51209b3a11afa4683b7146ac66818b7a, type: 3}
+  objectToSpawn: {fileID: 5563762059747994815, guid: 071bd231e9b254afeabf3291ed688835, type: 3}
 --- !u!4 &1510017151
 Transform:
   m_ObjectHideFlags: 0
@@ -9800,6 +9800,9 @@ MonoBehaviour:
   unit1Object: {fileID: 4697768305690122850, guid: 84a6279229a5e4f849875a1a61de1439, type: 3}
   unit2Object: {fileID: 8396687072920688332, guid: 1b9e666e549044a6ca3a9297a1a8ca8f, type: 3}
   unit3Object: {fileID: 3482806321661411671, guid: 52bd95e772b124e9aae1e0a6fa1d5d16, type: 3}
+  unit1ObjectLv2: {fileID: 5558002672498368070, guid: 4830f9c408b6a4bef8468aea1dd2fe04, type: 3}
+  unit2ObjectLv2: {fileID: 3204975574285119493, guid: 23588c74a75694ef3a57efe50cfef8d9, type: 3}
+  unit3ObjectLv2: {fileID: 7819312582810216711, guid: c59ca1d6071464a388b664a46c712f3d, type: 3}
   load: {fileID: 2041686397}
   fill: {fileID: 1721249112}
   gradient:
@@ -10687,7 +10690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit1
+        m_MethodName: SpawnUnit1Lv2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
