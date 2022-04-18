@@ -10,7 +10,9 @@ using UnityEngine.UI;
 public class FriendlySpawner : MonoBehaviour
 {
 
-    public GameObject objectToSpawn;
+    public GameObject unit1Object;
+    public GameObject unit2Object;
+    public GameObject unit3Object;
     [SerializeField] Image load;
     [SerializeField] Image fill;
     [SerializeField] Gradient gradient;
@@ -21,6 +23,10 @@ public class FriendlySpawner : MonoBehaviour
     private Slider slider;
     private float time;
     private bool startTimer;
+
+    private Vector3 spawnPosition;
+    
+    private GameObject objectToSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -65,10 +71,30 @@ public class FriendlySpawner : MonoBehaviour
         slider.enabled = false;
         fill.enabled = false;
 
-        Instantiate(objectToSpawn,transform.position,transform.rotation);
+        Instantiate(objectToSpawn,spawnPosition,transform.rotation);
 
         unit1.interactable = true;
         unit2.interactable = true;
         unit3.interactable = true;
+    }
+
+    public void SpawnUnit1() {
+        objectToSpawn = unit1Object;
+        spawnPosition = transform.position;
+        StartSpawnObject();
+    }
+
+    public void SpawnUnit2() {
+        StartSpawnObject();
+        spawnPosition = transform.position;
+        spawnPosition.y = transform.position.y - 0.1f;
+        objectToSpawn = unit2Object;
+    }
+
+      public void SpawnUnit3() {
+        StartSpawnObject();
+        spawnPosition = transform.position;
+        spawnPosition.y = transform.position.y - 0.3f;
+        objectToSpawn = unit3Object;
     }
 }
