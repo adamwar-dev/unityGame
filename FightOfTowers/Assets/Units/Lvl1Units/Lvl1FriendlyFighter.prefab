@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -976.35, y: -542.63}
-  m_SizeDelta: {x: 1, y: 0.2}
+  m_AnchoredPosition: {x: -976.3911, y: -542.718}
+  m_SizeDelta: {x: 0.6, y: 0.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7215879762378241161
 CanvasRenderer:
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 1287628147052514185}
   - component: {fileID: 3027535177929147269}
   - component: {fileID: 5622348329670729877}
+  - component: {fileID: -7804706499864121547}
   m_Layer: 0
   m_Name: Lvl1FriendlyFighter
   m_TagString: Untagged
@@ -158,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 4697768305690122850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.4, z: 1}
   m_Children:
   - {fileID: 3562011834405465743}
   m_Father: {fileID: 0}
@@ -203,9 +204,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.053436995, g: 1, b: 0, a: 1}
+  m_SortingOrder: 12
+  m_Sprite: {fileID: 4723107735738678597, guid: 77ba605bbd83f4448bc8683510c3155e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -249,18 +250,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.84, y: 1.37}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &3027535177929147269
 MonoBehaviour:
@@ -277,6 +278,7 @@ MonoBehaviour:
   ally: 1
   rb: {fileID: 535225326530932159}
   movementSpeed: 2
+  animator: {fileID: -7804706499864121547}
 --- !u!114 &5622348329670729877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +322,25 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 7576174332604411060}
+--- !u!95 &-7804706499864121547
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697768305690122850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8e11aab8059cc1499f23a2bbaf38adf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5042107133294382063
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 976.35, y: 543.42}
+  m_AnchoredPosition: {x: 976.35, y: 543.1}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &709530734702559651
@@ -453,7 +474,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_TargetDisplay: 0
 --- !u!114 &7072964081591665372
 MonoBehaviour:

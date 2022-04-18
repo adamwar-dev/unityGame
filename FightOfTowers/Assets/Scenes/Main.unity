@@ -1107,7 +1107,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120075155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1794003519}
+        m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
+        m_MethodName: SpawnUnit3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &120075155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,7 +1240,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 128176506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1794003519}
+        m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
+        m_MethodName: SpawnUnit2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128176506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6923,7 +6947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304284111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.2588825, y: -2.8014135, z: 19.88016}
+  m_LocalPosition: {x: -10, y: -2.8014135, z: 19.88016}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 755306875}
@@ -8268,7 +8292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b403741e4808da4fb2279f58260688a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 7073814849480423516, guid: d6e176676122a4fb7ba24f0f1fb12fa4, type: 3}
+  objectToSpawn: {fileID: 8223138949162704345, guid: 51209b3a11afa4683b7146ac66818b7a, type: 3}
 --- !u!4 &1510017151
 Transform:
   m_ObjectHideFlags: 0
@@ -8277,7 +8301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510017149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: -3.609, z: 0}
+  m_LocalPosition: {x: 17, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9773,7 +9797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490d9b4b85952c64cac5a1b6e249c6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 4697768305690122850, guid: 84a6279229a5e4f849875a1a61de1439, type: 3}
+  unit1Object: {fileID: 4697768305690122850, guid: 84a6279229a5e4f849875a1a61de1439, type: 3}
+  unit2Object: {fileID: 8396687072920688332, guid: 1b9e666e549044a6ca3a9297a1a8ca8f, type: 3}
+  unit3Object: {fileID: 3482806321661411671, guid: 52bd95e772b124e9aae1e0a6fa1d5d16, type: 3}
   load: {fileID: 2041686397}
   fill: {fileID: 1721249112}
   gradient:
@@ -9816,7 +9842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794003518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17, y: -3.617, z: 0}
+  m_LocalPosition: {x: -17.3, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10661,7 +10687,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: StartSpawnObject
+        m_MethodName: SpawnUnit1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
