@@ -1110,7 +1110,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit3Lv2
+        m_MethodName: SpawnUnit3Lv3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1243,7 +1243,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit2Lv2
+        m_MethodName: SpawnUnit2Lv3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8292,7 +8292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b403741e4808da4fb2279f58260688a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 5563762059747994815, guid: 071bd231e9b254afeabf3291ed688835, type: 3}
+  objectToSpawn: {fileID: 8927580761145550625, guid: a7e57927946ee49fd9ad520366af12fe, type: 3}
 --- !u!4 &1510017151
 Transform:
   m_ObjectHideFlags: 0
@@ -9800,9 +9800,12 @@ MonoBehaviour:
   unit1Object: {fileID: 4697768305690122850, guid: 84a6279229a5e4f849875a1a61de1439, type: 3}
   unit2Object: {fileID: 8396687072920688332, guid: 1b9e666e549044a6ca3a9297a1a8ca8f, type: 3}
   unit3Object: {fileID: 3482806321661411671, guid: 52bd95e772b124e9aae1e0a6fa1d5d16, type: 3}
-  unit1ObjectLv2: {fileID: 5558002672498368070, guid: 4830f9c408b6a4bef8468aea1dd2fe04, type: 3}
-  unit2ObjectLv2: {fileID: 3204975574285119493, guid: 23588c74a75694ef3a57efe50cfef8d9, type: 3}
+  unit1ObjectLv2: {fileID: 5558002672498368070, guid: 23588c74a75694ef3a57efe50cfef8d9, type: 3}
+  unit2ObjectLv2: {fileID: 3204975574285119493, guid: 4830f9c408b6a4bef8468aea1dd2fe04, type: 3}
   unit3ObjectLv2: {fileID: 7819312582810216711, guid: c59ca1d6071464a388b664a46c712f3d, type: 3}
+  unit1ObjectLv3: {fileID: 6157707478975388571, guid: 26de99180f5974a648e2f41edc2c6f30, type: 3}
+  unit2ObjectLv3: {fileID: 2080811486847438072, guid: 9b0dcdcdbadcf42bd8ab8a6a0d6e94a5, type: 3}
+  unit3ObjectLv3: {fileID: 27277030376666467, guid: 22ee427dcde5749d781926815f78cf41, type: 3}
   load: {fileID: 2041686397}
   fill: {fileID: 1721249112}
   gradient:
@@ -10690,7 +10693,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794003519}
         m_TargetAssemblyTypeName: FriendlySpawner, Assembly-CSharp
-        m_MethodName: SpawnUnit1Lv2
+        m_MethodName: SpawnUnit1Lv3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

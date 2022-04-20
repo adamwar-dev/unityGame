@@ -16,6 +16,9 @@ public class FriendlySpawner : MonoBehaviour
     public GameObject unit1ObjectLv2;
     public GameObject unit2ObjectLv2;
     public GameObject unit3ObjectLv2;
+    public GameObject unit1ObjectLv3;
+    public GameObject unit2ObjectLv3;
+     public GameObject unit3ObjectLv3;
     [SerializeField] Image load;
     [SerializeField] Image fill;
     [SerializeField] Gradient gradient;
@@ -121,5 +124,27 @@ public class FriendlySpawner : MonoBehaviour
         spawnPosition = transform.position;
         spawnPosition.y = transform.position.y - 0.2f;
         objectToSpawn = unit3ObjectLv2;
+    }
+
+      public void SpawnUnit1Lv3() {
+        StartSpawnObject();
+        spawnPosition = transform.position;
+        spawnPosition.y = transform.position.y - 0.2f;
+        objectToSpawn = unit1ObjectLv3;
+    }
+
+     public void SpawnUnit2Lv3() {
+        StartSpawnObject();
+        spawnPosition = transform.position;
+        spawnPosition.y = transform.position.y - 0.1f;
+        objectToSpawn = unit2ObjectLv3;
+    }
+
+     public void SpawnUnit3Lv3() {
+        StartSpawnObject();
+        spawnPosition = transform.position;
+        spawnPosition.y = transform.position.y + 0.3f;
+        spawnPosition.x = transform.position.x + 1f;
+        objectToSpawn = unit3ObjectLv3;
     }
 }
