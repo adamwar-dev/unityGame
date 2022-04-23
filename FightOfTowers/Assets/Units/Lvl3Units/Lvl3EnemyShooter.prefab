@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -976.35, y: -542.63}
-  m_SizeDelta: {x: 1, y: 0.2}
+  m_AnchoredPosition: {x: -976.36755, y: -543.2496}
+  m_SizeDelta: {x: 0.3, y: 0.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &940256214275285047
 CanvasRenderer:
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 1709807004762914805}
   - component: {fileID: 5022757705714581749}
   - component: {fileID: 6680770616156977256}
+  - component: {fileID: 6184991620898394870}
   m_Layer: 0
   m_Name: Lvl3EnemyShooter
   m_TagString: Untagged
@@ -158,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 3734039554211254010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1374476155433097235}
   m_Father: {fileID: 0}
@@ -203,9 +204,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.8867924, g: 0.10457456, b: 0.10457456, a: 1}
+  m_SortingOrder: 12
+  m_Sprite: {fileID: 21300000, guid: 0c95faed3aa5a43d3b19f112f0843c87, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -249,18 +250,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0046070516, y: -0.05835606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.81, y: 0.66}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1}
+  m_Size: {x: 0.40451533, y: 0.5577228}
   m_EdgeRadius: 0
 --- !u!114 &5022757705714581749
 MonoBehaviour:
@@ -277,7 +278,7 @@ MonoBehaviour:
   ally: 0
   rb: {fileID: 7541750988797433743}
   movementSpeed: 2
-  animator: {fileID: 0}
+  animator: {fileID: 6184991620898394870}
 --- !u!114 &6680770616156977256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +322,25 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 5312441506003932394}
+--- !u!95 &6184991620898394870
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3734039554211254010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c79885666e1a44e4fa8338e02c2dffd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6526579518237038154
 GameObject:
   m_ObjectHideFlags: 0
