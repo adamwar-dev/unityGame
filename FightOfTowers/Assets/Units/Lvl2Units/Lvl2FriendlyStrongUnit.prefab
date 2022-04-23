@@ -243,6 +243,8 @@ GameObject:
   - component: {fileID: 2671898614425537121}
   - component: {fileID: 9183700540176879224}
   - component: {fileID: 5532513892267905169}
+  - component: {fileID: 8941373504280184451}
+  - component: {fileID: 8591635486465769696}
   m_Layer: 0
   m_Name: Lvl2FriendlyStrongUnit
   m_TagString: Friendly
@@ -350,7 +352,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020861827, y: 0.13800886}
+  m_Offset: {x: 0.20256321, y: 0.13800886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -361,7 +363,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.50995564, y: 0.7239823}
+  m_Size: {x: 0.18665859, y: 0.7239823}
   m_EdgeRadius: 0
 --- !u!114 &2671898614425537121
 MonoBehaviour:
@@ -375,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed24e339312f1447a06c631fc0bc9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  box: {fileID: 8917290937674687205}
   ally: 1
   rb: {fileID: 8767177944378754079}
   movementSpeed: 2
@@ -441,6 +444,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &8941373504280184451
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819312582810216711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2672384, y: 0.13978624}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21567005, y: 0.72547853}
+  m_EdgeRadius: 0
+--- !u!114 &8591635486465769696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819312582810216711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0e64ed3af30c146aa9cb69faed2266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 8917290937674687205}
 --- !u!1 &9154921899984824671
 GameObject:
   m_ObjectHideFlags: 0
