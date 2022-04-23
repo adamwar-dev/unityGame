@@ -243,9 +243,10 @@ GameObject:
   - component: {fileID: 183258874971820079}
   - component: {fileID: 3088392223032223278}
   - component: {fileID: 759746281284614497}
+  - component: {fileID: 3445503345328354913}
   m_Layer: 0
   m_Name: Lvl2EnemyFighter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +351,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06256956, y: -0.090826824}
+  m_Offset: {x: -0.25066608, y: -0.09082681}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -361,7 +362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8568765, y: 0.8102728}
+  m_Size: {x: 0.48963463, y: 0.8102728}
   m_EdgeRadius: 0
 --- !u!114 &183258874971820079
 MonoBehaviour:
@@ -375,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed24e339312f1447a06c631fc0bc9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  box: {fileID: 2881910664987464223}
   ally: 0
   rb: {fileID: 2595051297050461820}
   movementSpeed: 2
@@ -441,6 +443,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &3445503345328354913
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406514554941018814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5688647, y: -0.090010256}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 0.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24308217, y: 0.83038527}
+  m_EdgeRadius: 0
 --- !u!1 &8560794731254344031
 GameObject:
   m_ObjectHideFlags: 0

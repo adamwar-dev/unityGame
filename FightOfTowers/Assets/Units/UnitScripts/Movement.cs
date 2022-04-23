@@ -1,5 +1,6 @@
 /*
     Adam Warzecha
+    Piotr Czuczeło
     Units Movement script
 */
 
@@ -7,6 +8,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public BoxCollider2D box;
     [SerializeField] bool ally;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float movementSpeed;
@@ -24,16 +26,19 @@ public class Movement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        animator.SetBool("Run", false);
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0;
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        // Debug.Log("Collision!");
+
+        if(col.otherCollider == box){
+
+            animator.SetBool("Run", false);
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }    
     }
 
     void OnCollisionExit2D(Collision2D col) {
         rb.velocity = new Vector2(ally ? movementSpeed : -movementSpeed, 0);
         rb.constraints = ~RigidbodyConstraints2D.FreezePositionX;
-        animator.SetBool("Run", true);
+        animator.SetBool("Run", true); 
     }
 }

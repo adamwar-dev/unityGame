@@ -90,9 +90,11 @@ GameObject:
   - component: {fileID: 5579697541724370286}
   - component: {fileID: 3140074471488695984}
   - component: {fileID: 4593190960889112084}
+  - component: {fileID: 8074313727083486048}
+  - component: {fileID: 851761946302017874}
   m_Layer: 0
   m_Name: Lvl1EnemyShooter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +199,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06314674, y: -0.12618151}
+  m_Offset: {x: -0.15570533, y: -0.12618151}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -208,7 +210,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41672295, y: 0.71387774}
+  m_Size: {x: 0.17223951, y: 0.71387774}
   m_EdgeRadius: 0
 --- !u!114 &5579697541724370286
 MonoBehaviour:
@@ -222,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed24e339312f1447a06c631fc0bc9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  box: {fileID: 218062885665905041}
   ally: 0
   rb: {fileID: 2566980966323290076}
   movementSpeed: 2
@@ -288,6 +291,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &8074313727083486048
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424455250200899576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2622281, y: -0.12322748}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 0.96}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16799484, y: 0.71354496}
+  m_EdgeRadius: 0
+--- !u!114 &851761946302017874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424455250200899576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0e64ed3af30c146aa9cb69faed2266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 218062885665905041}
 --- !u!1 &8181180736765600392
 GameObject:
   m_ObjectHideFlags: 0
