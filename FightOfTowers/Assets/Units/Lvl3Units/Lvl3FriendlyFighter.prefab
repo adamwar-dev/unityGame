@@ -558,3 +558,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 6800810352616351005}
+  animator: {fileID: 5715487566828953080}

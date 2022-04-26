@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
     Piotr Czuczeło
+    Adam Warzecha
     Units fighting script.
 */
 public class Fighting : MonoBehaviour
 {
 
     public BoxCollider2D box;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,11 @@ public class Fighting : MonoBehaviour
 
         if(col.otherCollider == box){
             
-            if(col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "Friendly"){
+            if((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "Friendly") ||
+               (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "Enemy")) {
 
                 Debug.Log("Collision!");
+                animator.SetBool("Fight", true);
                 var objToDestroy = col.gameObject;
 
                 yield return new WaitForSeconds(5);
@@ -42,6 +46,7 @@ public class Fighting : MonoBehaviour
     
     IEnumerator EnemyDestroy(GameObject gameObject){
         yield return new WaitForFixedUpdate();
+        animator.SetBool("Fight", false);
         Destroy (gameObject);
     }
 }

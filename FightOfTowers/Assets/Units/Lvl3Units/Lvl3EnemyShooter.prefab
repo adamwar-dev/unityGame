@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 1709807004762914805}
+  animator: {fileID: 6184991620898394870}
 --- !u!1 &6526579518237038154
 GameObject:
   m_ObjectHideFlags: 0
