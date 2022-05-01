@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTexturePath();
+        UpdateBaseTexture();
         if (currentHealth >= 10)
         {
             //testowa dekrementacja healthbar'a przy wcisnieciu spacji
@@ -40,10 +40,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    void UpdateTexturePath()
+    void UpdateBaseTexture()
     {
-        if (currentHealth > 70) _damageLevel = 'A';
-        else if (currentHealth > 20) _damageLevel = 'B';
+        if (currentHealth >= 70) _damageLevel = 'A';
+        else if (currentHealth >= 30) _damageLevel = 'B';
         else _damageLevel = 'C';
         _path = "F_lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
