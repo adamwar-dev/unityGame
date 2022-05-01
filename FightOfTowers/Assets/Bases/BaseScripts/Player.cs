@@ -14,8 +14,10 @@ public class Player : MonoBehaviour
     private string _path = "F_lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
+    private Vector3 friendlyPosition = new Vector3(-19.025f, -3.145f, 0f);
+    private Vector3 scale = new Vector3(0.8f, 0.7f, 0f);
+    private static Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
@@ -25,7 +27,6 @@ public class Player : MonoBehaviour
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateBaseTexture();
@@ -47,5 +48,25 @@ public class Player : MonoBehaviour
         else _damageLevel = 'C';
         _path = "F_lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
+        TransformPosition();
+    }
+
+    void TransformPosition()
+    {
+        switch (_path)
+        {
+            case "F_lvl1_C":
+            {
+                friendlyPosition.Set(-19.06f, -3.37f, 0f);
+                break;
+            }
+            default:
+            {
+                friendlyPosition.Set(-19.025f, -3.145f, 0f);
+                break;
+            }
+        }
+
+        transform.SetPositionAndRotation(friendlyPosition, rotation);
     }
 }

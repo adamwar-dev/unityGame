@@ -13,8 +13,10 @@ public class Enemy : MonoBehaviour
     private string _path = "E_lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
+    private Vector3 enemyPosition = new Vector3(18.451f, -3.011f, 0f);
+    private Vector3 scale = new Vector3(0.8f, 0.7f, 0f);
+    private static Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,7 +26,6 @@ public class Enemy : MonoBehaviour
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateBaseTexture();
@@ -46,5 +47,30 @@ public class Enemy : MonoBehaviour
         else _damageLevel = 'C';
         _path = "E_lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
+        TransformPosition();
+    }
+
+    void TransformPosition()
+    {
+        switch (_path)
+        {
+            case "E_lvl1_B":
+            {
+                enemyPosition.Set(18.518f, -2.996f, 0f);
+                break;
+            }
+            case "E_lvl1_C":
+            {
+                enemyPosition.Set(18.524f, -3.345f, 0f);
+                break;
+            }
+            default:
+            {
+                enemyPosition.Set(18.451f, -3.011f, 0f);
+                break;
+            }
+        }
+
+        transform.SetPositionAndRotation(enemyPosition, rotation);
     }
 }
