@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 2;
+        baseLevel = 3;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         UpdateBaseTexture();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
@@ -64,19 +64,31 @@ public class Player : MonoBehaviour
             case "F_lvl2_A":
             {
                 _friendlyPosition.Set(-18.809f, -1.428f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             case "F_lvl2_B":
             {
                 _friendlyPosition.Set(-18.818f, -1.526f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             case "F_lvl2_C":
             {
                 _friendlyPosition.Set(-18.8f, -2.601f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "F_lvl3_A":
+            {
+                _friendlyPosition.Set(-22.34f, -2.01f, 0f);
+                break;
+            }
+            case "F_lvl3_B":
+            {
+                _friendlyPosition.Set(-22.35f, -2.02f, 0f);
+                break;
+            }
+            case "F_lvl3_C":
+            {
+                _friendlyPosition.Set(-22.32f, -2.95f, 0f);
                 break;
             }
             default:
@@ -86,6 +98,7 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (baseLevel == 2 || baseLevel == 3) _scale.Set(0.7f, 0.6f, 0f);
         transform.localScale = _scale;
         transform.SetPositionAndRotation(_friendlyPosition, Rotation);
     }

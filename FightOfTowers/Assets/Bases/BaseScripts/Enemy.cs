@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 2;
+        baseLevel = 3;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
@@ -67,19 +67,31 @@ public class Enemy : MonoBehaviour
             case "E_lvl2_A":
             {
                 _enemyPosition.Set(18.56f, -1.71f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             case "E_lvl2_B":
             {
                 _enemyPosition.Set(18.61f, -1.87f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             case "E_lvl2_C":
             {
                 _enemyPosition.Set(18.58f, -2.9f, 0f);
-                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "E_lvl3_A":
+            {
+                _enemyPosition.Set(21.83f, -1.96f, 0f);
+                break;
+            }
+            case "E_lvl3_B":
+            {
+                _enemyPosition.Set(21.86f, -2.19f, 0f);
+                break;
+            }
+            case "E_lvl3_C":
+            {
+                _enemyPosition.Set(21.9f, -3.11f, 0f);
                 break;
             }
             default:
@@ -89,6 +101,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        if (baseLevel == 2 || baseLevel == 3) _scale.Set(0.7f, 0.6f, 0f);
         transform.localScale = _scale;
         transform.SetPositionAndRotation(_enemyPosition, Rotation);
     }
