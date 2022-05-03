@@ -14,16 +14,17 @@ public class Player : MonoBehaviour
     private string _path = "F_lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
-    private Vector3 friendlyPosition = new Vector3(-19.025f, -3.145f, 0f);
-    private Vector3 scale = new Vector3(0.8f, 0.7f, 0f);
-    private static Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
+    private Vector3 _friendlyPosition = new Vector3(-19.025f, -3.145f, 0f);
+    private Vector3 _scale = new Vector3(0.8f, 0.7f, 0f);
+    private static readonly Quaternion Rotation = new Quaternion(0f, 0f, 0f, 0f);
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 1;
+        baseLevel = 2;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
+        UpdateBaseTexture();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
 
@@ -57,16 +58,35 @@ public class Player : MonoBehaviour
         {
             case "F_lvl1_C":
             {
-                friendlyPosition.Set(-19.06f, -3.37f, 0f);
+                _friendlyPosition.Set(-19.06f, -3.37f, 0f);
+                break;
+            }
+            case "F_lvl2_A":
+            {
+                _friendlyPosition.Set(-18.809f, -1.428f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "F_lvl2_B":
+            {
+                _friendlyPosition.Set(-18.818f, -1.526f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "F_lvl2_C":
+            {
+                _friendlyPosition.Set(-18.8f, -2.601f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             default:
             {
-                friendlyPosition.Set(-19.025f, -3.145f, 0f);
+                _friendlyPosition.Set(-19.025f, -3.145f, 0f);
                 break;
             }
         }
 
-        transform.SetPositionAndRotation(friendlyPosition, rotation);
+        transform.localScale = _scale;
+        transform.SetPositionAndRotation(_friendlyPosition, Rotation);
     }
 }

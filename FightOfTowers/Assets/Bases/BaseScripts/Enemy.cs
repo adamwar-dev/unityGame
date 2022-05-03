@@ -13,15 +13,15 @@ public class Enemy : MonoBehaviour
     private string _path = "E_lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
-    private Vector3 enemyPosition = new Vector3(18.451f, -3.011f, 0f);
-    private Vector3 scale = new Vector3(0.8f, 0.7f, 0f);
-    private static Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
+    private Vector3 _enemyPosition = new Vector3(18.451f, -3.011f, 0f);
+    private Vector3 _scale = new Vector3(0.8f, 0.7f, 0f);
+    private static readonly Quaternion Rotation = new Quaternion(0f, 0f, 0f, 0f);
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 1;
+        baseLevel = 2;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
@@ -56,21 +56,40 @@ public class Enemy : MonoBehaviour
         {
             case "E_lvl1_B":
             {
-                enemyPosition.Set(18.518f, -2.996f, 0f);
+                _enemyPosition.Set(18.518f, -2.996f, 0f);
                 break;
             }
             case "E_lvl1_C":
             {
-                enemyPosition.Set(18.524f, -3.345f, 0f);
+                _enemyPosition.Set(18.524f, -3.345f, 0f);
+                break;
+            }
+            case "E_lvl2_A":
+            {
+                _enemyPosition.Set(18.56f, -1.71f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "E_lvl2_B":
+            {
+                _enemyPosition.Set(18.61f, -1.87f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
+                break;
+            }
+            case "E_lvl2_C":
+            {
+                _enemyPosition.Set(18.58f, -2.9f, 0f);
+                _scale.Set(0.7f, 0.6f, 0f);
                 break;
             }
             default:
             {
-                enemyPosition.Set(18.451f, -3.011f, 0f);
+                _enemyPosition.Set(18.451f, -3.011f, 0f);
                 break;
             }
         }
 
-        transform.SetPositionAndRotation(enemyPosition, rotation);
+        transform.localScale = _scale;
+        transform.SetPositionAndRotation(_enemyPosition, Rotation);
     }
 }
