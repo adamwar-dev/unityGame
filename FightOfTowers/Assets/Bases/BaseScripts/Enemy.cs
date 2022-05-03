@@ -1,4 +1,5 @@
 /* author: Mikolaj Malich */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,19 +8,27 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-
+    public int baseLevel;
+    private char _damageLevel = 'A';
+    private string _path = "E_lvl1_A";
     public HealthBar healthBar;
-    
-    // Start is called before the first frame update
+    private SpriteRenderer _spriteR;
+    private Vector3 _enemyPosition = new Vector3(18.451f, -3.011f, 0f);
+    private Vector3 _scale = new Vector3(0.8f, 0.7f, 0f);
+    private static readonly Quaternion Rotation = new Quaternion(0f, 0f, 0f, 0f);
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        baseLevel = 3;
+        _spriteR = gameObject.GetComponent<SpriteRenderer>();
+        _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        UpdateBaseTexture();
         if (currentHealth >= 10)
         {
             //testowa dekrementacja healthbar'a przy wcisnieciu klawisza m
@@ -29,5 +38,71 @@ public class Enemy : MonoBehaviour
                 healthBar.SetHealth(currentHealth);
             }
         }
+    }
+
+    void UpdateBaseTexture()
+    {
+        if (currentHealth >= 70) _damageLevel = 'A';
+        else if (currentHealth >= 30) _damageLevel = 'B';
+        else _damageLevel = 'C';
+        _path = "E_lvl" + baseLevel.ToString() + "_" + _damageLevel;
+        _spriteR.sprite = Resources.Load<Sprite>(_path);
+        TransformPosition();
+    }
+
+    void TransformPosition()
+    {
+        switch (_path)
+        {
+            case "E_lvl1_B":
+            {
+                _enemyPosition.Set(18.518f, -2.996f, 0f);
+                break;
+            }
+            case "E_lvl1_C":
+            {
+                _enemyPosition.Set(18.524f, -3.345f, 0f);
+                break;
+            }
+            case "E_lvl2_A":
+            {
+                _enemyPosition.Set(18.56f, -1.71f, 0f);
+                break;
+            }
+            case "E_lvl2_B":
+            {
+                _enemyPosition.Set(18.61f, -1.87f, 0f);
+                break;
+            }
+            case "E_lvl2_C":
+            {
+                _enemyPosition.Set(18.58f, -2.9f, 0f);
+                break;
+            }
+            case "E_lvl3_A":
+            {
+                _enemyPosition.Set(21.83f, -1.96f, 0f);
+                break;
+            }
+            case "E_lvl3_B":
+            {
+                _enemyPosition.Set(21.86f, -2.19f, 0f);
+                break;
+            }
+            case "E_lvl3_C":
+            {
+                _enemyPosition.Set(21.9f, -3.11f, 0f);
+                break;
+            }
+            default:
+            {
+                _enemyPosition.Set(18.451f, -3.011f, 0f);
+                break;
+            }
+        }
+
+        if (baseLevel == 2 || baseLevel == 3) _scale.Set(0.7f, 0.6f, 0f);
+        transform.localScale = _scale;
+        transform.SetPositionAndRotation(_enemyPosition, Rotation);
     }
 }
