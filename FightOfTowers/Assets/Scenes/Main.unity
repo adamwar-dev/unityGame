@@ -3184,8 +3184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -617.52, y: 458}
-  m_SizeDelta: {x: 160, y: 80}
+  m_AnchoredPosition: {x: 550, y: 470}
+  m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &585612629
 MonoBehaviour:
@@ -3296,6 +3296,7 @@ MonoBehaviour:
   spell: {fileID: 585612629}
   fill: {fileID: 50507272}
   slider: {fileID: 666321901}
+  meteor: {fileID: 8047712623290037306, guid: 18d172c5b3d207943bf1d3dd9e405299, type: 3}
 --- !u!1 &589061236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,7 +3995,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 60
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -4221,7 +4222,7 @@ RectTransform:
   - {fileID: 5734408272330335914}
   - {fileID: 585612628}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11674,7 +11675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: 485.5}
+  m_AnchoredPosition: {x: 215, y: 489.5}
   m_SizeDelta: {x: 500, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041686396
@@ -12442,7 +12443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907672508633558678, guid: c10671378037043769f316378dda0581, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907672508633558678, guid: c10671378037043769f316378dda0581, type: 3}
       propertyPath: m_LocalScale.x
@@ -12628,7 +12629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3549267204389929532, guid: 0546a6ff6ffa347af84dcec0d2c847a7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3549267204389929532, guid: 0546a6ff6ffa347af84dcec0d2c847a7, type: 3}
       propertyPath: m_LocalScale.x

@@ -7,12 +7,15 @@ public class Spell : MonoBehaviour
     [SerializeField] Button spell;
     [SerializeField] Image fill;
     [SerializeField] Slider slider;
+    [SerializeField] GameObject meteor;
+    private bool spawnMeteors;
     private bool isCooldown;
     private float time;
     // Start is called before the first frame update
     void Start()
     {
        isCooldown = false;
+       spawnMeteors = false;
     }
 
     // Update is called once per frame
@@ -25,16 +28,24 @@ public class Spell : MonoBehaviour
                 isCooldown = false;
             }
         }
+
+        if(spawnMeteors) {
+            for(int i = 0; i < 15; i++) {
+                Vector2 pos = new Vector2(Random.Range(-16,16), Random.Range(6,15));
+                Object.Instantiate(meteor, pos, Quaternion.identity);
+            }
+            spawnMeteors = false;
+        }
     }
 
     public void useSpell() {
         if (isCooldown){
             return;
         } else {
+            spawnMeteors = true;
             slider.value = slider.maxValue;
             isCooldown = true;
             time = 0f;
-            //TODO: meteors
         }
     }
 }
