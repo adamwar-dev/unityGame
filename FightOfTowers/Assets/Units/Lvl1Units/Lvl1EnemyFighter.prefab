@@ -197,6 +197,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 8797850674740549578}
+  health: 10
 --- !u!95 &7263982827351373241
 Animator:
   serializedVersion: 3
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   box: {fileID: 657308871701477193}
   animator: {fileID: 7263982827351373241}
+  healtbar: {fileID: 5903571065502208328}
 --- !u!1 &2230582674071391048
 GameObject:
   m_ObjectHideFlags: 0

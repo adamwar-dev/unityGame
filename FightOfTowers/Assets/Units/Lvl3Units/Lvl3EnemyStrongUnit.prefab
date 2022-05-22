@@ -500,6 +500,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 4886669133380368722}
+  health: 50
 --- !u!95 &3995341087221182745
 Animator:
   serializedVersion: 3
@@ -559,3 +560,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   box: {fileID: 9028907429452047551}
   animator: {fileID: 3995341087221182745}
+  healtbar: {fileID: 3342873940981482866}
