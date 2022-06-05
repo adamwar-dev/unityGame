@@ -8,7 +8,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
     public int baseLevel = 1;
     private char _damageLevel = 'A';
     private string _path = "lvl1_A";
@@ -20,7 +19,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         UpdateBaseTexture();
@@ -30,21 +28,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdateBaseTexture();
-        if (currentHealth >= 10)
+        if (healthBar.slider.value >= 10)
         {
             //testowa dekrementacja healthbar'a przy wcisnieciu spacji
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                currentHealth -= 10;
-                healthBar.SetHealth(currentHealth);
+                healthBar.SetHealth(healthBar.slider.value - 10);
             }
         }
     }
 
     void UpdateBaseTexture()
     {
-        if (currentHealth >= 70) _damageLevel = 'A';
-        else if (currentHealth >= 30) _damageLevel = 'B';
+        if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.7))) _damageLevel = 'A';
+        else if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.3))) _damageLevel = 'B';
         else _damageLevel = 'C';
         _path = "lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
