@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Friendly
+  - EnemyBase
+  - FriendlyBase
+  - Meteor
   layers:
   - Default
   - TransparentFX

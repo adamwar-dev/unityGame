@@ -28,6 +28,25 @@ public class Fighting : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
+
+        /*
+         *   Meteors
+         */
+
+        if(col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Enemy") {
+            // current health - meteor dmg
+            healtbar.SetHealth(healtbar.health - 10);
+            Destroy (col.gameObject);
+            if(healtbar.health <= 0)
+                Destroy(col.otherCollider.gameObject);
+        } else if (col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Friendly") {
+            Destroy (col.gameObject);
+        }
+
+        /*
+         *   Units && Bases
+         */
+
         if(col.otherCollider == box){
             colisionExit = false;
             if((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "Friendly") ||
@@ -43,7 +62,7 @@ public class Fighting : MonoBehaviour
                 
                 StartCoroutine("Fight",objToDestroy);              
             }
-        }     
+        }
     }
 
     void OnCollisionExit2D(Collision2D col) {
