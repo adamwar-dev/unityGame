@@ -8,10 +8,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
-    public int baseLevel;
+    public int baseLevel = 1;
     private char _damageLevel = 'A';
-    private string _path = "F_lvl1_A";
+    private string _path = "lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
     private Vector3 _friendlyPosition = new Vector3(-19.025f, -3.145f, 0f);
@@ -20,9 +19,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 3;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         UpdateBaseTexture();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
@@ -31,23 +28,22 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdateBaseTexture();
-        if (currentHealth >= 10)
+        if (healthBar.slider.value >= 10)
         {
             //testowa dekrementacja healthbar'a przy wcisnieciu spacji
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                currentHealth -= 10;
-                healthBar.SetHealth(currentHealth);
+                healthBar.SetHealth(healthBar.slider.value - 10);
             }
         }
     }
 
     void UpdateBaseTexture()
     {
-        if (currentHealth >= 70) _damageLevel = 'A';
-        else if (currentHealth >= 30) _damageLevel = 'B';
+        if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.7))) _damageLevel = 'A';
+        else if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.3))) _damageLevel = 'B';
         else _damageLevel = 'C';
-        _path = "F_lvl" + baseLevel.ToString() + "_" + _damageLevel;
+        _path = "lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
         TransformPosition();
     }
@@ -56,49 +52,58 @@ public class Player : MonoBehaviour
     {
         switch (_path)
         {
-            case "F_lvl1_C":
+            case "lvl1_A":
             {
-                _friendlyPosition.Set(-19.06f, -3.37f, 0f);
+                _friendlyPosition.Set(-20.0f, -2.6f, 0f);
                 break;
             }
-            case "F_lvl2_A":
+            case "lvl1_B":
             {
-                _friendlyPosition.Set(-18.809f, -1.428f, 0f);
+                _friendlyPosition.Set(-20.0f, -2.6f, 0f);
                 break;
             }
-            case "F_lvl2_B":
+            case "lvl1_C":
             {
-                _friendlyPosition.Set(-18.818f, -1.526f, 0f);
+                _friendlyPosition.Set(-20.0f, -2.6f, 0f);
                 break;
             }
-            case "F_lvl2_C":
+            case "lvl2_A":
             {
-                _friendlyPosition.Set(-18.8f, -2.601f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
-            case "F_lvl3_A":
+            case "lvl2_B":
             {
-                _friendlyPosition.Set(-22.34f, -2.01f, 0f);
+               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
-            case "F_lvl3_B":
+            case "lvl2_C":
             {
-                _friendlyPosition.Set(-22.35f, -2.02f, 0f);
+               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
-            case "F_lvl3_C":
+            case "lvl3_A":
             {
-                _friendlyPosition.Set(-22.32f, -2.95f, 0f);
+               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                break;
+            }
+            case "lvl3_B":
+            {
+               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                break;
+            }
+            case "lvl3_C":
+            {
+               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             default:
             {
-                _friendlyPosition.Set(-19.025f, -3.145f, 0f);
+               _friendlyPosition.Set(-20.0f, -2.5f, 0f);
                 break;
             }
         }
 
-        if (baseLevel == 2 || baseLevel == 3) _scale.Set(0.7f, 0.6f, 0f);
         transform.localScale = _scale;
         transform.SetPositionAndRotation(_friendlyPosition, Rotation);
     }

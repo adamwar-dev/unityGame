@@ -3,14 +3,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public int baseLevel;
+    public float maxHealth = 100;
+    public int baseLevel = 1;
     private char _damageLevel = 'A';
-    private string _path = "E_lvl1_A";
+    private string _path = "lvl1_A";
     public HealthBar healthBar;
     private SpriteRenderer _spriteR;
     private Vector3 _enemyPosition = new Vector3(18.451f, -3.011f, 0f);
@@ -19,9 +19,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        baseLevel = 3;
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
     }
@@ -29,23 +27,22 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         UpdateBaseTexture();
-        if (currentHealth >= 10)
+        if (healthBar.slider.value >= 10)
         {
             //testowa dekrementacja healthbar'a przy wcisnieciu klawisza m
             if (Input.GetKeyDown(KeyCode.M))
             {
-                currentHealth -= 10;
-                healthBar.SetHealth(currentHealth);
+                healthBar.SetHealth(healthBar.slider.value - 10);
             }
         }
     }
 
     void UpdateBaseTexture()
     {
-        if (currentHealth >= 70) _damageLevel = 'A';
-        else if (currentHealth >= 30) _damageLevel = 'B';
+        if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.7))) _damageLevel = 'A';
+        else if (healthBar.slider.value >= (healthBar.slider.maxValue * (0.3))) _damageLevel = 'B';
         else _damageLevel = 'C';
-        _path = "E_lvl" + baseLevel.ToString() + "_" + _damageLevel;
+        _path = "lvl" + baseLevel.ToString() + "_" + _damageLevel;
         _spriteR.sprite = Resources.Load<Sprite>(_path);
         TransformPosition();
     }
@@ -54,54 +51,58 @@ public class Enemy : MonoBehaviour
     {
         switch (_path)
         {
-            case "E_lvl1_B":
+             case "lvl1_A":
             {
-                _enemyPosition.Set(18.518f, -2.996f, 0f);
+                _enemyPosition.Set(20.0f, -2.6f, 0f);
                 break;
             }
-            case "E_lvl1_C":
+            case "lvl1_B":
             {
-                _enemyPosition.Set(18.524f, -3.345f, 0f);
+                _enemyPosition.Set(20.0f, -2.6f, 0f);
                 break;
             }
-            case "E_lvl2_A":
+            case "lvl1_C":
             {
-                _enemyPosition.Set(18.56f, -1.71f, 0f);
+                _enemyPosition.Set(20.0f, -2.6f, 0f);
                 break;
             }
-            case "E_lvl2_B":
+            case "lvl2_A":
             {
-                _enemyPosition.Set(18.61f, -1.87f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
-            case "E_lvl2_C":
+            case "lvl2_B":
             {
-                _enemyPosition.Set(18.58f, -2.9f, 0f);
+               _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
-            case "E_lvl3_A":
+            case "lvl2_C":
             {
-                _enemyPosition.Set(21.83f, -1.96f, 0f);
+               _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
-            case "E_lvl3_B":
+            case "lvl3_A":
             {
-                _enemyPosition.Set(21.86f, -2.19f, 0f);
+               _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
-            case "E_lvl3_C":
+            case "lvl3_B":
             {
-                _enemyPosition.Set(21.9f, -3.11f, 0f);
+               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                break;
+            }
+            case "lvl3_C":
+            {
+               _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             default:
             {
-                _enemyPosition.Set(18.451f, -3.011f, 0f);
+               _enemyPosition.Set(20.0f, -2.5f, 0f);
                 break;
             }
         }
 
-        if (baseLevel == 2 || baseLevel == 3) _scale.Set(0.7f, 0.6f, 0f);
         transform.localScale = _scale;
         transform.SetPositionAndRotation(_enemyPosition, Rotation);
     }

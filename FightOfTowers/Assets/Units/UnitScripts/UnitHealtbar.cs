@@ -45,4 +45,13 @@ public class UnitHealtbar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
+    /* 
+        Change only maxValue, without changing currentValue.
+        Will be usefull at upgrades.
+    */
+    public void ChangeMaxHealthValue(float health) {
+        slider.maxValue = health;
+        fill.color = gradient.Evaluate(1f);
+    }
+
 }

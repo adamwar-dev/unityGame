@@ -6,12 +6,11 @@ using UnityEngine;
     Adam Warzecha
     Units fighting script.
 */
-public class Fighting : MonoBehaviour
+public class BaseFighting : MonoBehaviour
 {
 
     public BoxCollider2D box;
-    public Animator animator;   
-    public UnitHealtbar healtbar;
+    public HealthBar healtbar;
     private bool colisionExit = false;
     private float damage;
 
@@ -28,20 +27,15 @@ public class Fighting : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if(col.otherCollider == box){
+        if(col.otherCollider == box) {
             colisionExit = false;
-            if((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "Friendly") ||
-               (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "Enemy") ||
-               (col.gameObject.tag == "EnemyBase" && col.otherCollider.gameObject.tag == "Friendly") ||
-               (col.gameObject.tag == "FriendlyBase" && col.otherCollider.gameObject.tag == "Enemy")) {
+            if((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "FriendlyBase") ||
+               (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "EnemyBase")) {
+
                 GetDamage(col.gameObject.name);   
-                Debug.Log(damage);
-                Debug.Log("Collision!");
-                Debug.Log(col.gameObject.name);
-                
                 var objToDestroy = col.otherCollider.gameObject;
                 
-                StartCoroutine("Fight",objToDestroy);              
+                StartCoroutine("BaseFight", objToDestroy);              
             }
         }     
     }
@@ -53,32 +47,26 @@ public class Fighting : MonoBehaviour
         }
     }
     
-    void EnemyDestroy(GameObject gameObject){
+    void BaseDestroy(GameObject gameObject) {
         //yield return new WaitForFixedUpdate();
-        animator.SetBool("Fight", false);
         Destroy (gameObject);
         Debug.Log("killed!");
     }
 
-    IEnumerator Fight(GameObject friendly){
-        while(healtbar.health > 0 ){
+    IEnumerator BaseFight(GameObject Tower) {
+        while(healtbar.slider.value > 0 ){
 
             if(colisionExit == false){
-                animator.SetBool("Fight", true);
-                Debug.Log("attack!");  
-                Debug.Log(healtbar.health);
                 yield return new WaitForSeconds(1);
-                healtbar.SetHealth(healtbar.health - damage);
+                healtbar.SetHealth(healtbar.slider.value - damage);
                 
             }else{
-                animator.SetBool("Fight", false);
-                Debug.Log("break");
                 break;
             } 
         }
-        if(healtbar.health <= 0){
-            Debug.Log("<=0!");
-            EnemyDestroy(friendly);
+        if(healtbar.slider.value <= 0){
+            Debug.Log("End game");
+            BaseDestroy(Tower);
         } 
     }
 
