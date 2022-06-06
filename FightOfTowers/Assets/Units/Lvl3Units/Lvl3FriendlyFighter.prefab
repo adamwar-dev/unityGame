@@ -561,3 +561,4 @@ MonoBehaviour:
   box: {fileID: 6800810352616351005}
   animator: {fileID: 5715487566828953080}
   healtbar: {fileID: 1587930986603376267}
+  logic: {fileID: 975824918597936436, guid: f2a068e60023a44b78cbc09c26b9b590, type: 3}
