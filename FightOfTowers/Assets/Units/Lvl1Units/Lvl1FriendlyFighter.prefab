@@ -386,6 +386,7 @@ MonoBehaviour:
   box: {fileID: 1287628147052514185}
   animator: {fileID: -7804706499864121547}
   healtbar: {fileID: 5622348329670729877}
+  logic: {fileID: 975824918597936436, guid: f2a068e60023a44b78cbc09c26b9b590, type: 3}
 --- !u!1 &5042107133294382063
 GameObject:
   m_ObjectHideFlags: 0
