@@ -11,37 +11,25 @@ public class BaseFighting : MonoBehaviour
 
     public BoxCollider2D box;
     public HealthBar healtbar;
+    public EndMenuOverScreen endMenu;
     private bool colisionExit = false;
     private float damage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter2D(Collision2D col) {
-        if(col.otherCollider == box) {
+        if (col.otherCollider == box) {
             colisionExit = false;
-            if((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "FriendlyBase") ||
-               (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "EnemyBase")) {
+            if ((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "FriendlyBase") ||
+                (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "EnemyBase")) {
 
                 GetDamage(col.gameObject.name);   
                 var objToDestroy = col.otherCollider.gameObject;
-                
+
                 StartCoroutine("BaseFight", objToDestroy);              
             }
         }     
     }
 
     void OnCollisionExit2D(Collision2D col) {
-        if(col.otherCollider == box){
+        if (col.otherCollider == box){
             Debug.Log("exit!");
             colisionExit = true;
         }
@@ -49,62 +37,64 @@ public class BaseFighting : MonoBehaviour
     
     void BaseDestroy(GameObject gameObject) {
         //yield return new WaitForFixedUpdate();
+        if (gameObject.tag == "FriendlyBase") {
+            endMenu.SetupEndMenu(false);
+        } else {
+            endMenu.SetupEndMenu(true);
+        }
         Destroy (gameObject);
-        Debug.Log("killed!");
     }
 
     IEnumerator BaseFight(GameObject Tower) {
         while(healtbar.slider.value > 0 ){
 
-            if(colisionExit == false){
+            if (colisionExit == false){
                 yield return new WaitForSeconds(1);
                 healtbar.SetHealth(healtbar.slider.value - damage);
-                
-            }else{
+            } else {
                 break;
             } 
         }
-        if(healtbar.slider.value <= 0){
-            Debug.Log("End game");
+        if (healtbar.slider.value <= 0){
             BaseDestroy(Tower);
         } 
     }
 
     void GetDamage(string name){
 
-        if(name.Contains("Lvl1")){
-           if(name.Contains("Fighter")){
+        if (name.Contains("Lvl1")){
+           if (name.Contains("Fighter")){
                damage = 4;
-           }else if(name.Contains("Shooter")){
+           } else if (name.Contains("Shooter")){
                damage = 6;
-           }else if(name.Contains("Strong")){
+           } else if (name.Contains("Strong")){
                damage = 8;
-           }else{
+           } else {
                damage = 4;
            }
         }
-        else if(name.Contains("Lvl2")){
-            if(name.Contains("Fighter")){
+        else if (name.Contains("Lvl2")){
+            if (name.Contains("Fighter")){
                 damage = 10;
-           }else if(name.Contains("Shooter")){
+           } else if (name.Contains("Shooter")){
                damage = 12;
-           }else if(name.Contains("Strong")){
+           } else if (name.Contains("Strong")){
                damage = 14;
-           }else{
+           } else {
                damage = 10;
            }
-        }else if(name.Contains("Lvl3")){
-            if(name.Contains("Fighter")){
+        } else if (name.Contains("Lvl3")){
+            if (name.Contains("Fighter")){
                 damage = 16;
-           }else if(name.Contains("Shooter")){
+           } else if (name.Contains("Shooter")){
                damage = 18;
-           }else if(name.Contains("Strong")){
+           } else if (name.Contains("Strong")){
                damage = 20;
-           }else{
+           } else {
                damage = 16;
            }
-        }else{
-                damage = 0;
+        } else {
+            damage = 0;
         }
 
     }
