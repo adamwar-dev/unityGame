@@ -11835,6 +11835,10 @@ MonoBehaviour:
   level: 0
   goldValue: {fileID: 2031783074}
   expValue: {fileID: 648107483}
+  unit1Value: {fileID: 507749834}
+  unit2Value: {fileID: 878858789}
+  unit3Value: {fileID: 2091171000}
+  upgradeValue: {fileID: 1455903051}
 --- !u!1 &1931600855
 GameObject:
   m_ObjectHideFlags: 0
