@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour
 
     public float exp;
 
+    public int level;
     public TextMeshProUGUI goldValue;
 
     public TextMeshProUGUI expValue;
@@ -21,6 +22,7 @@ public class GameLogic : MonoBehaviour
     {
         gold = 200;
         exp = 0;
+        level = 1;
     }
 
     // Update is called once per frame

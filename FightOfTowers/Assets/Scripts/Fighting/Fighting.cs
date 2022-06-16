@@ -5,6 +5,7 @@ using UnityEngine;
 /*
     Piotr Czuczeło
     Adam Warzecha
+    Mikolaj Malich
     Units fighting script.
 */
 public class Fighting : MonoBehaviour
@@ -28,27 +29,31 @@ public class Fighting : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter2D(Collision2D col) {
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
         /*
          *   Meteors
          */
 
-        if(col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Enemy") {
+        if (col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Enemy")
+        {
             // current health - meteor dmg
             healtbar.SetHealth(healtbar.health - 10);
-            Destroy (col.gameObject);
-            if(healtbar.health <= 0)
+            Destroy(col.gameObject);
+            if (healtbar.health <= 0)
                 Destroy(col.otherCollider.gameObject);
-        } else if (col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Friendly") {
-            Destroy (col.gameObject);
+        }
+        else if (col.gameObject.tag == "Meteor" && col.otherCollider.gameObject.tag == "Friendly")
+        {
+            Destroy(col.gameObject);
         }
 
         /*
          *   Units && Bases
          */
 
-        if(col.otherCollider == box){
+        if (col.otherCollider == box)
+        {
             colisionExit = false;
             if ((col.gameObject.tag == "Enemy" && col.otherCollider.gameObject.tag == "Friendly") ||
                 (col.gameObject.tag == "Friendly" && col.otherCollider.gameObject.tag == "Enemy") ||
@@ -239,6 +244,21 @@ public class Fighting : MonoBehaviour
         {
             if (name.Contains("Fighter"))
             {
+                return 10;
+            }
+            else if (name.Contains("Shooter"))
+            {
+                return 25;
+            }
+            else if (name.Contains("Strong"))
+            {
+                return 50;
+            }
+        }
+        else if (name.Contains("Lvl2"))
+        {
+            if (name.Contains("Fighter"))
+            {
                 return 100;
             }
             else if (name.Contains("Shooter"))
@@ -250,7 +270,7 @@ public class Fighting : MonoBehaviour
                 return 500;
             }
         }
-        else if (name.Contains("Lvl2"))
+        else if (name.Contains("Lvl3"))
         {
             if (name.Contains("Fighter"))
             {
@@ -263,21 +283,6 @@ public class Fighting : MonoBehaviour
             else if (name.Contains("Strong"))
             {
                 return 5000;
-            }
-        }
-        else if (name.Contains("Lvl3"))
-        {
-            if (name.Contains("Fighter"))
-            {
-                return 10000;
-            }
-            else if (name.Contains("Shooter"))
-            {
-                return 25000;
-            }
-            else if (name.Contains("Strong"))
-            {
-                return 50000;
             }
         }
 
