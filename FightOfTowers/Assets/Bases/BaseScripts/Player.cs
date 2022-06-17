@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameLogic gLogic;
     public int maxHealth = 100;
     public int baseLevel = 1;
     private char _damageLevel = 'A';
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
         _spriteR = gameObject.GetComponent<SpriteRenderer>();
         UpdateBaseTexture();
         _spriteR.sprite = Resources.Load<Sprite>(_path);
+        baseLevel = gLogic.level;
     }
 
     void Update()
@@ -36,6 +38,8 @@ public class Player : MonoBehaviour
                 healthBar.SetHealth(healthBar.slider.value - 10);
             }
         }
+
+        baseLevel = gLogic.level;
     }
 
     void UpdateBaseTexture()
@@ -74,32 +78,32 @@ public class Player : MonoBehaviour
             }
             case "lvl2_B":
             {
-               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl2_C":
             {
-               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_A":
             {
-               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_B":
             {
-               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_C":
             {
-               _friendlyPosition.Set(-20.1f, -2.0f, 0f);
+                _friendlyPosition.Set(-20.1f, -2.0f, 0f);
                 break;
             }
             default:
             {
-               _friendlyPosition.Set(-20.0f, -2.5f, 0f);
+                _friendlyPosition.Set(-20.0f, -2.5f, 0f);
                 break;
             }
         }

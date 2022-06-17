@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         switch (_path)
         {
-             case "lvl1_A":
+            case "lvl1_A":
             {
                 _enemyPosition.Set(20.0f, -2.6f, 0f);
                 break;
@@ -73,32 +73,32 @@ public class Enemy : MonoBehaviour
             }
             case "lvl2_B":
             {
-               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl2_C":
             {
-               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_A":
             {
-               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_B":
             {
-               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             case "lvl3_C":
             {
-               _enemyPosition.Set(20.1f, -2.0f, 0f);
+                _enemyPosition.Set(20.1f, -2.0f, 0f);
                 break;
             }
             default:
             {
-               _enemyPosition.Set(20.0f, -2.5f, 0f);
+                _enemyPosition.Set(20.0f, -2.5f, 0f);
                 break;
             }
         }
