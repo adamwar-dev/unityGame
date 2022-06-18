@@ -14,6 +14,7 @@ public class Fighting : MonoBehaviour
     public Animator animator;
     public UnitHealtbar healtbar;
     private GameLogic logic;
+    private EnemyGameLogic Enemylogic;
     private bool colisionExit = false;
     private float damage;
 
@@ -22,6 +23,7 @@ public class Fighting : MonoBehaviour
     void Start()
     {
         logic = GameObject.Find("GameLogic").GetComponent<GameLogic>();
+        Enemylogic = GameObject.Find("EnemyGameLogic").GetComponent<EnemyGameLogic>();
     }
 
     // Update is called once per frame
@@ -116,6 +118,11 @@ public class Fighting : MonoBehaviour
             {
                 logic.AddGold(GetGold(friendly.name));
                 logic.AddExp(GetExp(friendly.name));
+            }
+            else if(friendly.CompareTag("Friendly")){
+                Debug.Log("Enemy get gold");
+                Enemylogic.AddGold(GetGold(friendly.name));
+                Enemylogic.AddExp(GetExp(friendly.name));
             }
 
             EnemyDestroy(friendly);
