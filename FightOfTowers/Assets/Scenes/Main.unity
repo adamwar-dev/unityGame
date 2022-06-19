@@ -4258,7 +4258,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -9246,7 +9246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b403741e4808da4fb2279f58260688a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8223138949162704345, guid: 51209b3a11afa4683b7146ac66818b7a, type: 3}
+  objectToSpawn: {fileID: 7424455250200899576, guid: ad4b8a1e14cc048f8a539d27cb73d612, type: 3}
   gLogic: {fileID: 1616304652}
   unit1Object: {fileID: 1764357944053813450, guid: 7137c1a913465458388e26b2944257a2, type: 3}
   unit2Object: {fileID: 7424455250200899576, guid: ad4b8a1e14cc048f8a539d27cb73d612, type: 3}
@@ -9269,7 +9269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510017149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: -3.4, z: 0}
+  m_LocalPosition: {x: 16.5, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13653,6 +13653,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8745833037546374164, guid: c10671378037043769f316378dda0581, type: 3}
+      propertyPath: egLogic
+      value: 
+      objectReference: {fileID: 1616304652}
     - target: {fileID: 8745833037546374164, guid: c10671378037043769f316378dda0581, type: 3}
       propertyPath: baseLevel
       value: 1

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 {
     public float maxHealth = 100;
     public int baseLevel = 1;
+    public EnemyGameLogic egLogic;
     private char _damageLevel = 'A';
     private string _path = "lvl1_A";
     public HealthBar healthBar;
@@ -35,6 +36,8 @@ public class Enemy : MonoBehaviour
                 healthBar.SetHealth(healthBar.slider.value - 10);
             }
         }
+
+        baseLevel = egLogic.level;
     }
 
     void UpdateBaseTexture()
