@@ -184,15 +184,15 @@ public class FriendlySpawner : MonoBehaviour
 
     public void enableGoldButton()
     {
-        if (gLogic.gold > 40 * checkLevel())
+        if (gLogic.gold >= 40 * checkLevel())
         {
             unit1.interactable = unit2.interactable = unit3.interactable = true;
         }
-        else if (gLogic.gold > 20 * checkLevel())
+        else if (gLogic.gold >= 20 * checkLevel())
         {
             unit1.interactable = unit2.interactable = true;
         }
-        else if (gLogic.gold > 8 * checkLevel())
+        else if (gLogic.gold >= 8 * checkLevel())
         {
             unit1.interactable = true;
         }

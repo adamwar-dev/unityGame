@@ -77,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnObject()
     {
-        Instantiate(objectToSpawn,transform.position,transform.rotation);
+        Instantiate(objectToSpawn,spawnPosition,transform.rotation);
     }
 
     public void SpawnUnit1()
@@ -173,15 +173,15 @@ public int checkLevel()
 
     public void enableGoldButton()
     {
-        if (gLogic.gold > 40 * checkLevel())
+        if (gLogic.gold >= 40 * checkLevel())
         {
             unit1 = unit2 = unit3 = true;
         }
-        else if (gLogic.gold > 20 * checkLevel())
+        else if (gLogic.gold >= 20 * checkLevel())
         {
             unit1 = unit2 = true;
         }
-        else if (gLogic.gold > 8 * checkLevel())
+        else if (gLogic.gold >= 8 * checkLevel())
         {
             unit1 = true;
         }
