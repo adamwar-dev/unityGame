@@ -191,10 +191,14 @@ public class FriendlySpawner : MonoBehaviour
         else if (gLogic.gold >= 20 * checkLevel())
         {
             unit1.interactable = unit2.interactable = true;
+            unit3.interactable = false;
         }
         else if (gLogic.gold >= 8 * checkLevel())
         {
             unit1.interactable = true;
+            unit2.interactable = unit3.interactable = false;
+        } else {
+            unit1.interactable = unit2.interactable = unit3.interactable = false;
         }
     }
 

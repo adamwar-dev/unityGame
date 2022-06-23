@@ -1682,8 +1682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34, y: 41.5}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchoredPosition: {x: 32, y: 32}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235252690
 MonoBehaviour:
@@ -8235,15 +8235,15 @@ RectTransform:
   m_GameObject: {fileID: 1335143313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 128176504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 36.2, y: 47.8}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchoredPosition: {x: 32, y: 32}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335143315
 MonoBehaviour:
@@ -10704,14 +10704,14 @@ RectTransform:
   m_GameObject: {fileID: 1733332614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 120075153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28.8, y: 32}
+  m_AnchoredPosition: {x: 32, y: 32}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733332616
@@ -11943,6 +11943,18 @@ MonoBehaviour:
   unit2Value: {fileID: 878858789}
   unit3Value: {fileID: 2091171000}
   upgradeValue: {fileID: 1455903051}
+  buttonImage1: {fileID: 235252690}
+  buttonImage2: {fileID: 1335143315}
+  buttonImage3: {fileID: 1733332616}
+  lv1_unit1: {fileID: 4723107735738678597, guid: e4d45939247b13f43afaafd6f368275d, type: 3}
+  lv1_unit2: {fileID: 21300000, guid: ce4071c76b90fca4fb42c23988fe6171, type: 3}
+  lv1_unit3: {fileID: 4723107735738678597, guid: 4da0cdad9c535134490be24b8d364d33, type: 3}
+  lv2_unit1: {fileID: 21300000, guid: 5bb9c76c54de81b40b50d145dbe56044, type: 3}
+  lv2_unit2: {fileID: -7008412969330441016, guid: d6b8c791d8089b44a9a8c5a7423bd180, type: 3}
+  lv2_unit3: {fileID: -5639509438907974925, guid: c50b517797d93614aac4ca58aaf97355, type: 3}
+  lv3_unit1: {fileID: -3318188226485093758, guid: ee20805cc6bfb6e44a9e0397fdda80d9, type: 3}
+  lv3_unit2: {fileID: 21300000, guid: 74163c8307952f74191e1655dd9aa057, type: 3}
+  lv3_unit3: {fileID: 8231058446179839085, guid: 2c6a58acd5120044db7bc89596efd558, type: 3}
 --- !u!1 &1931600855
 GameObject:
   m_ObjectHideFlags: 0
